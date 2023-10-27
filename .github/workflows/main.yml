@@ -8,7 +8,7 @@ on:
         required: true
         type: string
         default: ubuntu-latest
-      version:
+      setup-version:
         description: The version of snyk/actions/setup to use 
         required: true
         type: string
@@ -25,7 +25,7 @@ jobs:
       run: |
         echo "$GITHUB_CONTEXT"
     - name: Setup Snyk
-      uses: snyk/actions/setup@${{ inputs.version }}
+      uses: snyk/actions/setup@${{ inputs.setup-version }}
     - run: |
         which snyk
         snyk --help
