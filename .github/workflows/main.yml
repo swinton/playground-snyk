@@ -2,7 +2,7 @@ name: Main
 
 on:
   workflow_dispatch:
-    inputs: 
+    inputs:
       runs-on:
         description: The type of machine to run the job on
         required: true
