@@ -3,6 +3,11 @@ name: Main
 on:
   workflow_dispatch:
     inputs:
+      snyk-setup-action-version:
+        description: The version of the Snyk setup action to use
+        required: true
+        type: string
+        default: d8f656ed88025ca3bacdfb5d2d1363dd8943832f
       runs-on:
         description: The type of machine to run the job on
         required: true
