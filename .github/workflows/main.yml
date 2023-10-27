@@ -25,7 +25,7 @@ jobs:
       run: |
         echo "$GITHUB_CONTEXT"
     - name: Setup Snyk
-      uses: snyk/actions/setup@d8f656ed88025ca3bacdfb5d2d1363dd8943832f
+      uses: snyk/actions/setup@${{ inputs.snyk-setup-action-version }}
     - run: |
         which snyk
         snyk --help
