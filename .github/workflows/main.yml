@@ -1,12 +1,18 @@
 name: Main
 
 on:
-  workflow_dispatch
-  
+  workflow_dispatch:
+    inputs: 
+      runs-on:
+        description: The type of machine to run the job on
+        required: true
+        type: string
+        default: ubuntu-latest
+
 jobs:
   main:
     name: Main
-    runs-on: ubuntu-latest
+    runs-on: ${{ inputs.runs-on }}
     steps:
     - name: Context
       env:
