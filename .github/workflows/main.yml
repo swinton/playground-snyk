@@ -1,0 +1,20 @@
+name: Main
+
+on:
+  workflow_dispatch
+  
+jobs:
+  main:
+    name: Main
+    runs-on: ubuntu-latest
+    steps:
+    - name: Context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: |
+        echo "$GITHUB_CONTEXT"
+    - name: Setup Snyk
+      uses: snyk/actions/setup@d8f656ed88025ca3bacdfb5d2d1363dd8943832f
+    - run: |
+        which snyk
+        snyk --help
